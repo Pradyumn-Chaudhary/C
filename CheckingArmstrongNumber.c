@@ -1,28 +1,21 @@
 #include<stdio.h>
 #include<math.h>
 void main(){
-    int x,y,z,m,n,count = 0,i=0,j=0,check = 0;
-    int arr[10];
-    printf("Enter Range\n");
-    scanf("%d %d",&x,&z);
-    m = x;
-    while(m!=z+1){
-    n = x;
-    while(n!=0){
-        arr[i] = n % 10;
-        n/=10;
-        count++;
-        i++;
+    int n, check = 0, power = 0;
+    printf("Enter number\n");
+    scanf("%d", &n);
+    int i = n, j = n;
+    while(i!=0){
+        power++;
+        i /= 10;
     }
-    arr[count]=00;
-    while(arr[j]!=00){
-        y = pow(arr[j],count);
-        check+=y;
-        j++;
+    while(j!=0){
+        int remain = j % 10;
+        check = check + pow(remain, power);
+        j /= 10;
     }
-    if(m==check){
-        printf("%d\n",m);
+    if(check==n)
+        printf("%d is an Armstrong Number", n);
+        else
+            printf("%d is not an Armstrong Number", n);
     }
-    m++;
-    }
-}
