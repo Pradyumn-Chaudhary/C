@@ -8,5 +8,5 @@ int main(){
         printf("%d \n",i);
         i++;
     } while(i<=n);
-    return 0;k
+    return 0;
 }
